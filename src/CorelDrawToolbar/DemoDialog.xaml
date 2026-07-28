@@ -1,0 +1,93 @@
+<Window x:Class="CorelDrawToolbar.DemoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PCodex 工具栏参数" Width="540" Height="500"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        ShowInTaskbar="False" Background="#F5F7F6" Foreground="#17211B">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Padding" Value="8,4" />
+            <Setter Property="BorderBrush" Value="#C8D0CB" />
+            <Setter Property="Background" Value="White" />
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Padding" Value="7,3" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Padding="22,18" Background="#17231D">
+            <StackPanel>
+                <TextBlock FontSize="20" FontWeight="SemiBold" Foreground="White" Text="PCodex CorelDRAW Toolkit" />
+                <TextBlock Margin="0,5,0,0" Foreground="#AFC8B8" Text="可直接修改的参数与 WPF 弹窗示例" />
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="22,18">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="16" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.ColumnSpan="3">
+                <TextBlock Margin="0,0,0,6" FontWeight="SemiBold" Text="默认艺术字文案" />
+                <TextBox x:Name="ArtisticTextInput" MaxLength="80" />
+                <TextBlock Margin="0,5,0,0" FontSize="11" Foreground="#66736B" Text="用于艺术字和 PCodex 组合样例。" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="2">
+                <TextBlock Margin="0,0,0,6" FontWeight="SemiBold" Text="水平偏移" />
+                <TextBox x:Name="OffsetXInput" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2">
+                <TextBlock Margin="0,0,0,6" FontWeight="SemiBold" Text="垂直偏移" />
+                <TextBox x:Name="OffsetYInput" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="4">
+                <TextBlock Margin="0,0,0,6" FontWeight="SemiBold" Text="页面边距百分比" />
+                <TextBox x:Name="PageMarginInput" />
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="2">
+                <TextBlock Margin="0,0,0,6" FontWeight="SemiBold" Text="填充预设" />
+                <ComboBox x:Name="FillPresetInput" SelectedValuePath="Tag">
+                    <ComboBoxItem Tag="pcodex-green" Content="PCodex 绿 · RGB 42,168,116" />
+                    <ComboBoxItem Tag="corel-cyan" Content="Corel 青 · RGB 39,163,209" />
+                    <ComboBoxItem Tag="creative-purple" Content="创意紫 · RGB 132,91,190" />
+                    <ComboBoxItem Tag="alert-orange" Content="提示橙 · RGB 232,142,55" />
+                </ComboBox>
+            </StackPanel>
+
+            <Border Grid.Row="6" Grid.ColumnSpan="3" Padding="12" Background="#E8F1EB" BorderBrush="#BCD2C3" BorderThickness="1" CornerRadius="5">
+                <CheckBox x:Name="CompletionDialogInput" VerticalContentAlignment="Center"
+                          Content="每次执行命令后显示完成提示弹窗" />
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2" Padding="14,12" Background="White" BorderBrush="#D7DEDA" BorderThickness="0,1,0,0">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Width="82" Height="32" Margin="0,0,8,0" IsCancel="True" Content="取消" />
+                <Button Width="106" Height="32" Click="Save_Click" Background="#236B45" Foreground="White"
+                        BorderBrush="#236B45" Content="应用参数" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

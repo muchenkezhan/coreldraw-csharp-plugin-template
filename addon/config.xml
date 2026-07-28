@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <resources>
+    <resource name="PCodexToolbarResources" path="PCodexToolbarResources.dll">
+      <resourceMap>
+        <resEntry id="90b2c98b-09e7-5848-a270-a3caf47b21e4" string="1001" icon="101" />
+        <resEntry id="ccb13749-eb3d-5c0d-9b8f-557510543012" string="1002" icon="102" />
+        <resEntry id="6d0c913f-09bb-5f85-aae0-b06df2339791" string="1003" icon="103" />
+        <resEntry id="b6632cdf-7500-57d6-b563-4665f982e4d9" string="1004" icon="104" />
+        <resEntry id="5a193513-2c17-538b-9955-c9987731cc37" string="1005" icon="105" />
+        <resEntry id="c13915e5-c769-5d7d-a736-372d9d564f10" string="1006" icon="106" />
+        <resEntry id="50085dc1-8afc-5045-9164-04abe4bb203e" string="1007" icon="107" />
+        <resEntry id="52174911-1f92-52b4-96a8-12b2132312a5" string="1008" icon="108" />
+        <resEntry id="d1523bdf-3970-529c-9774-882725004f18" string="1009" icon="109" />
+        <resEntry id="929f4ae7-5c38-5c54-a652-b3c62e33890f" string="1010" icon="110" />
+      </resourceMap>
+    </resource>
+  </resources>
+</config>

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "templateId": "coreldraw-csharp-toolbar-addon",
+  "kind": "coreldraw-csharp",
+  "toolchain": "dotnet",
+  "platformPack": "coreldraw",
+  "projectType": "coreldraw-csharp-toolbar-addon",
+  "projectName": "CorelDrawToolbar",
+  "targetFramework": "net48",
+  "hostMode": "in-process-wpf-toolbar",
+  "addonDirectory": "CorelDrawToolbar",
+  "pluginDevelopment": {
+    "schemaVersion": 1,
+    "host": "coreldraw",
+    "adapter": "coreldraw-addon",
+    "displayName": "CorelDrawToolbar",
+    "build": {
+      "projectFile": "src/CorelDrawToolbar/CorelDrawToolbar.csproj",
+      "configuration": "Debug",
+      "targetFramework": "net48",
+      "assemblyName": "CorelDrawToolbar",
+      "resourceBuildScript": "tools/Build-ToolbarResources.ps1"
+    },
+    "deployment": {
+      "sourceDirectory": "addon",
+      "targetDirectoryName": "CorelDrawToolbar",
+      "targetMode": "auto",
+      "selectedTargetIds": [],
+      "customTargets": []
+    }
+  }
+}

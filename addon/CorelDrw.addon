@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Addon>
+  <Name>CorelDrawToolbar</Name>
+  <Guid>b5676025-2339-463a-95f6-45ffca161e33</Guid>
+  <Version>1.0.0.0</Version>
+  <Description>CorelDRAW in-process WPF toolbar created with PCodex Plugin Studio</Description>
+  <UI>
+    <AppUI>AppUI-V5.xslt</AppUI>
+    <UserUI>UserUI-V5.xslt</UserUI>
+  </UI>
+</Addon>
