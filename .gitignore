@@ -1,0 +1,6 @@
+bin/
+obj/
+.vs/
+*.user
+addon/PCodexToolbarResources.dll
+addon/.toolbar-resources/

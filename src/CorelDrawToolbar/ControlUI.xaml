@@ -1,0 +1,68 @@
+<UserControl x:Class="CorelDrawToolbar.ControlUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MinHeight="34" MinWidth="640">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="MinWidth" Value="64" />
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Margin" Value="2,0" />
+            <Setter Property="Padding" Value="8,2" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type ToggleButton}">
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Margin" Value="2,0" />
+            <Setter Property="Padding" Value="8,2" />
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel Margin="3,2" LastChildFill="True">
+        <TextBlock DockPanel.Dock="Left" Margin="7,0,10,0" VerticalAlignment="Center"
+                   FontWeight="SemiBold" Foreground="#236B45" Text="PCodex" ToolTip="PCodex CorelDRAW Toolkit" />
+        <Menu x:Name="ToolbarMenu" DockPanel.Dock="Left" VerticalAlignment="Center" Background="Transparent">
+            <MenuItem Header="创建 ▾">
+                <MenuItem Tag="PCodex_CreatePageRectangle" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="页面比例矩形" />
+                <MenuItem Tag="PCodex_CreateArtisticText" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="PCodex 艺术字" />
+                <MenuItem Tag="PCodex_CreateSample" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="PCodex 组合样例" />
+            </MenuItem>
+            <MenuItem Header="选区 ▾">
+                <MenuItem Tag="PCodex_DuplicateOffset" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="复制并偏移" />
+                <MenuItem Tag="PCodex_CenterSelection" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="居中到页面" />
+                <MenuItem Tag="PCodex_ApplyDemoFill" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="应用当前填充" />
+                <MenuItem Tag="PCodex_ShowSelectionInfo" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="显示选区信息" />
+            </MenuItem>
+            <MenuItem Header="演示 ▾">
+                <MenuItem Tag="PCodex_OpenSettings" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="打开参数弹窗" />
+                <MenuItem Tag="PCodex_ShowAbout" Click="NativeCommand_Click" StaysOpenOnClick="True" Header="关于 PCodex Demo" />
+            </MenuItem>
+        </Menu>
+        <ComboBox x:Name="FillPresetCombo" DockPanel.Dock="Left" Width="126" Height="26"
+                  Margin="2,0" VerticalContentAlignment="Center" SelectedValuePath="Tag"
+                  SelectionChanged="FillPresetCombo_SelectionChanged" ToolTip="选择 CorelDRAW 填充颜色预设">
+            <ComboBoxItem Tag="pcodex-green" Content="PCodex 绿" />
+            <ComboBoxItem Tag="corel-cyan" Content="Corel 青" />
+            <ComboBoxItem Tag="creative-purple" Content="创意紫" />
+            <ComboBoxItem Tag="alert-orange" Content="提示橙" />
+        </ComboBox>
+        <Button DockPanel.Dock="Left" Tag="PCodex_ApplyDemoFill" Click="NativeCommand_Click" Content="填充" ToolTip="将下拉框中的颜色应用到选区" />
+        <ToggleButton x:Name="QuickPanelButton" DockPanel.Dock="Left" Content="快捷面板 ▾"
+                      Click="QuickPanelButton_Click" ToolTip="打开 PCodex 快捷 Popup 面板" />
+        <Button DockPanel.Dock="Left" Tag="PCodex_OpenSettings" Click="NativeCommand_Click" Content="参数…" ToolTip="打开 PCodex 参数弹窗" />
+        <Popup x:Name="QuickPanelPopup" PlacementTarget="{Binding ElementName=QuickPanelButton}"
+               Placement="Bottom" StaysOpen="False" Closed="QuickPanelPopup_Closed">
+            <Border Width="254" Padding="14" Background="#17231D" BorderBrush="#3D7454" BorderThickness="1" CornerRadius="6">
+                <StackPanel>
+                    <TextBlock FontSize="14" FontWeight="SemiBold" Foreground="White" Text="PCodex 快捷面板" />
+                    <TextBlock x:Name="QuickSummaryText" Margin="0,7,0,12" Foreground="#B3CDBB" TextWrapping="Wrap" />
+                    <Button Tag="PCodex_CreateSample" Click="NativeCommand_Click" Content="创建组合样例" />
+                    <Button Tag="PCodex_ShowSelectionInfo" Click="NativeCommand_Click" Content="读取选区信息" />
+                    <Button Tag="PCodex_OpenSettings" Click="NativeCommand_Click" Content="编辑默认参数" />
+                </StackPanel>
+            </Border>
+        </Popup>
+        <TextBlock x:Name="StatusText" Margin="10,0,4,0" MaxWidth="210"
+                   VerticalAlignment="Center" Text="工具栏已就绪"
+                   TextTrimming="CharacterEllipsis" ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}" />
+    </DockPanel>
+</UserControl>
