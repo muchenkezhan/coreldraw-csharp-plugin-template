@@ -1,4 +1,5 @@
 # CorelDRAW WPF Toolbar Addon Template
+本项目  ![PCodex](https://github.com/muchenkezhan/QzCanvasTool) 已内置，最佳体验PCdoex里面进行开发
 
 基于 C#、WPF 和 CorelDRAW `.addon` 加载机制的开发模板，用于创建在 CorelDRAW 进程内运行的 x64 工具栏插件。
 
